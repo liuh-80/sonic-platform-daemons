@@ -14,6 +14,9 @@ tests_path = os.path.dirname(os.path.abspath(__file__))
 # Add mocked_libs path so that the file under test can load mocked modules from there
 mocked_libs_path = os.path.join(tests_path, "mocked_libs")
 sys.path.insert(0, mocked_libs_path)
+from swsscommon import Table, FieldValuePairs, STATE_DB
+# Remove mock lib from path so other class in swsscommon can be load
+sys.path.remove(0)
 
 import pytest
 
